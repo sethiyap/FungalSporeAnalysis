@@ -39,4 +39,8 @@ genelist_specific_profileplot(feature_gr=feature_gr,bw_files = "TBP_veA_wt_spore
 genelist_specific_profileplot(feature_gr=feature_gr,bw_files = "TFIIB_veA_wt_spore", genelist=gene_list,max_key=5,min_key = 1, output_name="An_Spore_TFIIB", ymin=3, palette = "white_blue", ymax = 5.5)
 
 ```
-![](plots/An_Spore_Pol2_1030_hm.png){width=50%} ![](plots/An_Spore_TBP_1030_hm.png){width=50%} ![](plots/An_Spore_TFIIB_1030_hm.png){width=50%}
+
+```{r, echo=FALSE,out.width="32%",out.height="10%",fig.cap=" ",fig.show='hold',fig.align='center'}
+knitr::include_graphics(c("plots/An_Spore_Pol2_1030_hm.png","plots/An_Spore_TBP_1030_hm.png","plots/An_Spore_TFIIB_1030_hm.png"))
+``` 
+

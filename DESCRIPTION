@@ -23,3 +23,4 @@ Imports:
           EnrichedHeatmap(== 1.13.2),
           ComplexHeatmap (== 1.99.5),
           grid (>= 3.5.1)
+          knitr (>= 1.25)

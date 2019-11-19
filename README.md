@@ -24,4 +24,6 @@ genelist_specific_profileplot(feature_gr=feature_gr,bw_files = "TBP_veA_wt_spore
 genelist_specific_profileplot(feature_gr=feature_gr,bw_files = "TFIIB_veA_wt_spore", genelist=gene_list,max_key=5,min_key = 1, output_name="An_Spore_TFIIB", ymin=3, palette = "white_blue", ymax = 5.5)
 ```
 
-<img src="plots/An_Spore_Pol2_1030_hm.png" style="width:50.0%" /> <img src="plots/An_Spore_TBP_1030_hm.png" style="width:50.0%" /> <img src="plots/An_Spore_TFIIB_1030_hm.png" style="width:50.0%" />
+<img src="plots/An_Spore_Pol2_1030_hm.png" alt=" " width="32%" height="10%" /><img src="plots/An_Spore_TBP_1030_hm.png" alt=" " width="32%" height="10%" /><img src="plots/An_Spore_TFIIB_1030_hm.png" alt=" " width="32%" height="10%" />
+<p class="caption">
+</p>
