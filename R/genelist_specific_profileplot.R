@@ -161,7 +161,7 @@ genelist_specific_profileplot <- function(feature_gr, genelist=NULL, bw_files,pr
                                                   axis_name = axis_name,
                                                   col = circlize::colorRamp2(breaks = seq(min_key,max_key, by = split_factor),
                                                                              colors = colors ),
-                                                  top_annotation = ComplexHeatmap::HeatmapAnnotation(lines = EnrichedHeatmap::anno_enriched(axis_param =list( facing="outside",side="left",gp=grid::gpar(fonsize=12)),
+                                                  top_annotation = ComplexHeatmap::HeatmapAnnotation(lines = EnrichedHeatmap::anno_enriched(axis_param =list(facing="outside",side="left",gp=grid::gpar(fonsize=12)),
                                                                                                                                             ylim = c(ymin,ymax),
                                                                                                                                             height = grid::unit(2, "cm")
                                                   )
@@ -169,8 +169,8 @@ genelist_specific_profileplot <- function(feature_gr, genelist=NULL, bw_files,pr
 
           if(output==TRUE){
                     print("plotting")
-                    pdf(file=paste(output_name, length(sub_feature_gr), "hm.pdf", sep="_"), width=nrow(bw_files)*2.5, height=11)
-                    ComplexHeatmap::draw(ehm_list, heatmap_legend_side = "bottom", gap = grid::unit(1.5, "mm"))
+                    png(file=paste(output_name, length(sub_feature_gr),"hm.png", sep="_"),width=nrow(bw_files)*2.5,height=9,pointsize = 14, res=300,units = "in")
+                    ComplexHeatmap::draw(ehm_list, heatmap_legend_side = "top", gap = grid::unit(1.5, "mm"))
                     dev.off()
           }
           else{
