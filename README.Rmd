@@ -60,8 +60,11 @@ lineplot_for_bw(feature_txDb, genelist=genelist, bw_file="An_d3_spore_mRNA_hisat
 
 Distribution of actively transcrbing genes ranked by RNAP-II values and control genes in H3 data.
 ```{r,warning=FALSE, echo=TRUE, eval=FALSE}
+# Histone H3 occupancy
+genelist <- readr::read_delim("data/an_spore_pol2_for_H3percentile.txt",delim="\t", col_names=FALSE)
+
 lineplot_for_bw(feature_txDb, genelist =genelist,bw_file="H3_an_spore", output_name = "plots/H3_an_spore", expression_value = FALSE)
 ```
-```{r, echo=FALSE,out.width="32%",out.height="10%",fig.cap=" ",fig.show='hold',fig.align='center'}
+```{r, echo=FALSE,out.width="33%",out.height="20%",fig.cap=" ",fig.show='hold',fig.align='center'}
 knitr::include_graphics(c("plots/pol2_veA_wt_spore_lineplot.png","plots/An_d3_spore_mRNA_hisat2_lineplot.png","plots/H3_an_spore_lineplot.png"))
 ``` 
