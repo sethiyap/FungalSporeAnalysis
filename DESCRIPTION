@@ -22,5 +22,7 @@ Imports:
           purrr (>= 0.3.2),
           EnrichedHeatmap(== 1.13.2),
           ComplexHeatmap (== 1.99.5),
-          grid (>= 3.5.1)
-          knitr (>= 1.25)
+          grid (>= 3.5.1),
+          knitr (>= 1.25),
+          tidyr (>= 1.0.0),
+          ggplot2 (>= 3.2.1)
