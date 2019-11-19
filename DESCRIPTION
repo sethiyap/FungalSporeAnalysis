@@ -1,0 +1,25 @@
+Package: FungalSporeAnalysis
+Title: ChIPSeq data analysis of fungal spores.
+Version: 0.0.0.9000
+Authors@R: 
+    person(given = "Pooja",
+           family = "Sethiya",
+           role = c("aut", "cre"),
+           email = "poojasethiya24@gmail.com",
+           comment = c(ORCID = "YOUR-ORCID-ID"))
+Description: Functions used for analyzing fungal spore data. These functions help to visualize multiple profile plots, profiles plots specific to a gene list, line-plots, GO plots to understand transcription in fungal spores. 
+License: MIT
+Encoding: UTF-8
+LazyData: true
+RoxygenNote: 6.1.1
+Imports:
+          magrittr(>= 1.5),
+          png (>= 0.1-7),
+          rtracklayer (>= 1.42.2),
+          GenomicFeatures (>= 1.34.8),
+          broom (>= 0.5.2),
+          dplyr (>= 0.8.3),
+          purrr (>= 0.3.2),
+          EnrichedHeatmap(== 1.13.2),
+          ComplexHeatmap (== 1.99.5),
+          grid (>= 3.5.1)
