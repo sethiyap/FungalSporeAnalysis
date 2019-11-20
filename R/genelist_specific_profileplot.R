@@ -43,7 +43,7 @@
 #' \dontrun{
 #'
 #' feature_txDb <- AnnotationDbi::loadDb("R/an_feature_file_s10_m04_r07.sqlite")
-#' gene_list <- readr::read_delim("data/An_Spore_Pol2.txt", delim="\t", col_names = FALSE)
+#' gene_list <- readr::read_delim("data/an_spore_pol2.txt", delim="\t", col_names = FALSE)
 #' bw_files <- c("pol2_veA_wt_spore","TBP_veA_wt_spore", "TFIIB_veA_wt_spore")
 #' genelist_specific_profileplot(feature_txDb=feature_txDb,bw_files = bw_files, genelist=gene_list, output_name="An_Pol2_TBP_TFIIB", ymin=3)
 #'
@@ -60,7 +60,7 @@ genelist_specific_profileplot <- function(feature_txDb, genelist=NULL, bw_files,
                     feature_gr <- GenomicFeatures::genes(feature_txDb)
                     gene_list <- genelist %>% dplyr::arrange(desc(X2))
 
-                    #--- orcer by the expression value
+                    #--- order by the expression value
                     sub_feature_gr <- subset(feature_gr,feature_gr$gene_id %in% gene_list$X1)
                     sub_feature_gr <- sub_feature_gr[match(gene_list$X1,sub_feature_gr$gene_id),]
                     cluster_rows <- FALSE
@@ -162,13 +162,13 @@ genelist_specific_profileplot <- function(feature_txDb, genelist=NULL, bw_files,
                                                                              colors = colors ),
                                                   top_annotation = ComplexHeatmap::HeatmapAnnotation(lines = EnrichedHeatmap::anno_enriched(axis_param =list(facing="outside",side="left",gp=grid::gpar(fonsize=12)),
                                                                                                                                             ylim = c(ymin,ymax),
-                                                                                                                                            height = grid::unit(2, "cm")
+                                                                                                                                            height = grid::unit(1.2, "cm")
                                                   )
                                                   ))
 
           if(output==TRUE){
                     print("plotting")
-                    png(file=paste(output_name, length(sub_feature_gr),"hm.png", sep="_"),width=nrow(bw_files)*2.5,height=9,pointsize = 14, res=300,units = "in")
+                    png(file=paste(output_name, length(sub_feature_gr),"hm.png", sep="_"),width=nrow(bw_files)*2,height=5.5,pointsize = 8, res=300,units = "in")
                     ComplexHeatmap::draw(ehm_list, heatmap_legend_side = "top", gap = grid::unit(1.5, "mm"))
                     dev.off()
           }
