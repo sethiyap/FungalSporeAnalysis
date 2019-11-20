@@ -119,11 +119,6 @@ lineplot_for_bw <- function(feature_txDb,genelist,bw_file,output_name="Sample", 
                     ylab <- "mean signal"
           }
 
-
-
-
-          #print(summarised_mat)
-
           gg <- ggplot2::ggplot(summarised_mat,ggplot2::aes(column_name,avg, group=quantile, color=quantile))+
                     ggplot2::geom_line(lwd=0.8)+
                     ggplot2::scale_color_manual(values=values)+

@@ -2,6 +2,7 @@
 
 export(genelist_specific_profileplot)
 export(lineplot_for_bw)
+export(profiles_normalized_by_control)
 import(ComplexHeatmap)
 import(EnrichedHeatmap)
 import(ggplot2)
