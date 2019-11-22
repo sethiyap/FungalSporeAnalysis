@@ -39,7 +39,7 @@
 #' @importFrom purrr map
 #' @import EnrichedHeatmap
 #' @import ComplexHeatmap
-#' @import grid unit
+#' @importFrom  grid unit
 #'
 #' @return Parallel plots of profiles(log2) for given gene lists, ordered by
 #'   given expression value (high to low).

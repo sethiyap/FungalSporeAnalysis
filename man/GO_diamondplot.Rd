@@ -13,8 +13,7 @@ GO term \item annotated: numeric, number of genes enriched in the GO-term
 pvalue: numeric, pvalue of enrichment \item category: character, a
 group-name to annotate the GO and color the diamonds \item class:
 character, optional if there are two categories, second category should be
-under column class. When class is present then the diamonds are colored by
-class else by category}}
+under column class.}}
 
 \item{palette}{Character, to choose from available palette or define a
   palette.\code{default:TRUE} \itemize{ \item two_color: a palette of pink and green
