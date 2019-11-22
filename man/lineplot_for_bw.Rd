@@ -48,3 +48,6 @@ lineplot_for_bw(feature_txDb, genelist =genelist,bw_file="pol2_veA_wt_spore", ou
 
 }
 }
+\author{
+pooja sethiya
+}
