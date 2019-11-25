@@ -261,4 +261,37 @@ genelist_specific_profileplot(feature_txDb = feature_txDb, genelist = gene_list,
 knitr::include_graphics(plots["af_3day_17day_spore_pol2_1309_hm.png"])
 ```
 
+## **Supplementary figures**
+
+### Correlation between replicates
+
+1. RNAP II
+```{r,warning=FALSE, echo=TRUE, eval=FALSE}
+
+
+
+```
+
+2. RNASeq
+
+3. Histone marks
+```{r,warning=FALSE, echo=TRUE, eval=FALSE}
+dat <- read.delim("inst/extdata/correlation_data/an_histone_spore_count_mat.tab",sep="\t", header = TRUE)
+gp <- bw_corr(dat, pattern = ".*_spore_(.*)_(.*)")
+```
+```{r,echo=FALSE, out.width = "300px",fig.align='center'}
+knitr::include_graphics(plots["An_spore_histone_bwscatterplot.png"])
+```
+
+4. TF's
+```{r,warning=FALSE, echo=TRUE, eval=FALSE}
+dat <- read.delim("inst/extdata/correlation_data/an_tbp_tf2b_spore_count_mat.tab",sep="\t", header = TRUE)
+gp <- bw_corr(dat, pattern = ".*_spore_(.*)_(.*)")
+```
+
+```{r,echo=FALSE, out.width = "300px",fig.align='center'}
+knitr::include_graphics(plots["An_spore_TF_bwscatterplot.png"])
+```
+
+
 
