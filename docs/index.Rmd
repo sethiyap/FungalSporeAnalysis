@@ -279,7 +279,7 @@ knitr::include_graphics(plots["af_3day_17day_spore_pol2_1309_hm.png"])
 dat <- read.delim("inst/extdata/correlation_data/an_histone_spore_count_mat.tab",sep="\t", header = TRUE)
 gp <- bw_corr(dat, pattern = ".*_spore_(.*)_(.*)")
 ```
-```{r,echo=FALSE, out.width = "300px",fig.align='center'}
+```{r,echo=FALSE, out.width = "700px",fig.align='center'}
 knitr::include_graphics(plots["An_spore_histone_bwscatterplot.png"])
 ```
 
@@ -289,7 +289,7 @@ dat <- read.delim("inst/extdata/correlation_data/an_tbp_tf2b_spore_count_mat.tab
 gp <- bw_corr(dat, pattern = ".*_spore_(.*)_(.*)")
 ```
 
-```{r,echo=FALSE, out.width = "300px",fig.align='center'}
+```{r,echo=FALSE, out.width = "700px",fig.align='center'}
 knitr::include_graphics(plots["An_spore_TF_bwscatterplot.png"])
 ```
 
