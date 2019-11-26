@@ -265,7 +265,9 @@ knitr::include_graphics(plots["af_3day_17day_spore_pol2_1309_hm.png"])
 
 ### Correlation between replicates
 
-RNAP-II and RNASeq correlation was computed using normalised read count over the gene-body. Scatterplot of normalised read count and FPKM values were plotted using scatter plot functionality of [FungiExpresZ](https://cparsania.shinyapps.io/FungiExpresZ/)
+RNAP-II and RNASeq correlation was computed using normalised read count over the gene-body. Scatterplot of normalised read count and FPKM values were plotted using scatter plot functionality of [FungiExpresZ](https://cparsania.shinyapps.io/FungiExpresZ/) [v0.0.4](https://github.com/cparsania/FungiExpresZ/releases/tag/v0.0.4){target=_blank}
+
+
 
 1. RNAP-II
 
