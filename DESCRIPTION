@@ -1,5 +1,5 @@
 Package: FungalSporeAnalysis
-Title: ChIPSeq data analysis of fungal spores.
+Title: Genomics data analysis of fungal spores.
 Version: 0.0.0.9000
 Authors@R: 
     person(given = "Pooja",
@@ -26,6 +26,7 @@ Imports:
           knitr (>= 1.25),
           tidyr (>= 1.0.0),
           ggplot2 (>= 3.2.1),
-          stringr (>= 1.4.0)
+          stringr (>= 1.4.0),
+          usethis (>= 1.5.0)
           
 

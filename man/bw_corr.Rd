@@ -31,9 +31,11 @@ correlation between two replicates of samples with correlation
 \examples{
 \dontrun{
 
-dat <- read.delim("inst/extdata/correlation_data/an_histone_spore_count_mat.tab",sep="\\t", header = TRUE)
+dat_path <- system.file("extdata//correlation_data/an_histone_spore_count_mat.tab" , package = "FungalSporeAnalysis")
+dat <- read.delim(dat_path,sep="\\t", header = TRUE)
 gp <- bw_corr(dat, pattern = ".*_spore_(.*)_(.*)")
 ggsave(gp, filename = "An_spore_histone_bwscatterplot.png", height=5, width=5, device = "png", units = "in")
+
 }
 }
 \author{

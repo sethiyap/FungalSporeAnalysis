@@ -34,8 +34,8 @@ Visualize GO enrichment result in a diamond plot
 \examples{
 \dontrun{
 
-data <- readr::read_delim("data/an_af_pm_spores_GO.txt", col_names = TRUE, delim="\\t")
-GO_diamondplot(data, output_name = "plots/An_Af_Pm_GO", palette="three_color")
+data <- readr::read_delim(system.file("extdata/genesets/an_af_pm_spores_GO.txt" , package = "FungalSporeAnalysis"), col_names = TRUE, delim="\\t")
+GO_diamondplot(data, output_name = "An_Af_Pm_GO", palette="three_color")
 
 }
 }

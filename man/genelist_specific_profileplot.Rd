@@ -61,8 +61,10 @@ Profile plot for list of genes to be subsetted from genome
 \examples{
 \dontrun{
 
-feature_txDb <- AnnotationDbi::loadDb("R/an_feature_file_s10_m04_r07.sqlite")
-gene_list <- readr::read_delim("data/an_spore_pol2.txt", delim="\\t", col_names = FALSE)
+ feature_txDb <- AnnotationDbi::loadDb(system.file("extdata/sqllite/an_feature_file_s10_m04_r07.sqlite" , package = "FungalSporeAnalysis"))
+ data_files <- system.file("extdata/sysdata.rda" , package = "FungalSporeAnalysis")
+
+gene_list <- readr::read_delim(system.file("extdata/genesets/an_spore_pol2.txt" , package = "FungalSporeAnalysis"), delim="\\t", col_names = FALSE)
 bw_files <- c("pol2_veA_wt_spore","TBP_veA_wt_spore", "TFIIB_veA_wt_spore")
 genelist_specific_profileplot(feature_txDb=feature_txDb,bw_files = bw_files, genelist=gene_list, output_name="An_Pol2_TBP_TFIIB", ymin=3)
 

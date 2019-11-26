@@ -31,10 +31,12 @@ should define the percentiles. \code{default: TRUE}}
 \item{tiles}{Numeric, when \code{expression_value=TRUE}, specify the number
 of percentiles inorder to divide the data.\code{default: 4}}
 
-\item{median}{Logical, to display median or mean line of percentiles.\code{default: TRUE}}
+\item{median}{Logical, to display median or mean line of
+percentiles.\code{default: TRUE}}
 }
 \value{
-A line-plot of percentiles and a tibble of percentiles appended to expression data.
+A line-plot of percentiles and a tibble of percentiles appended to
+  expression data.
 }
 \description{
 Plot line-plot of each percentile for given gene-list.
@@ -42,8 +44,9 @@ Plot line-plot of each percentile for given gene-list.
 \examples{
 \dontrun{
 
-feature_txDb <- AnnotationDbi::loadDb("R/an_feature_file_s10_m04_r07.sqlite")
-genelist <- readr::read_delim("data/an_spore_pol2_for_percentilelineplot.txt",delim="\\t", col_names=FALSE)
+feature_txDb <- AnnotationDbi::loadDb(system.file("extdata/sqllite/an_feature_file_s10_m04_r07.sqlite" , package = "FungalSporeAnalysis"))
+genelist_dat <- system.file("extdata/genesets/an_spore_pol2_for_percentilelineplot.txt" , package = "FungalSporeAnalysis")
+genelist <- readr::read_delim(genelist_dat,delim="\\t", col_names=FALSE)
 lineplot_for_bw(feature_txDb, genelist =genelist,bw_file="pol2_veA_wt_spore", output_name = "plots/pol2_veA_wt_spore")
 
 }

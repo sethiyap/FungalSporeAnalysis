@@ -27,10 +27,13 @@
 #'
 #' @examples
 #' \dontrun{
+#'  feature_txDb <- AnnotationDbi::loadDb(system.file("extdata/sqllite/an_feature_file_s10_m04_r07.sqlite" , package = "FungalSporeAnalysis"))
+#'  data_files <- system.file("extdata/sysdata.rda" , package = "FungalSporeAnalysis")
 #'
-#'  genelist_1 <- readr::read_delim("data/an_spore_pol2.txt", delim="\t", col_names = FALSE)
-#'  genelist_2 <- readr::read_delim("data/an_spore_pol2_controlgenes.txt", delim="\t", col_names = FALSE)
-#'  profiles_normalized_by_control(feature_txDb = feature_txDb,bw_test = "H3AC_veA_wt_spore", bw_control = "H3_an_spore",genelist_1 = genelist_1,genelist_2 = genelist_2, ymax = 3.8,ymin=0.5, output_name = "plots/H3Ac_veA_wt_spore")
+#'  genelist_1 <- readr::read_delim(system.file("extdata/genesets/an_spore_pol2.txt" , package = "FungalSporeAnalysis"), delim="\t", col_names = FALSE)
+#'  genelist_2 <- readr::read_delim(system.file("extdata/genesets/an_spore_pol2_controlgenes.txt", package = "FungalSporeAnalysis"), delim="\t", col_names = FALSE)
+#'
+#'  profiles_normalized_by_control(feature_txDb = feature_txDb,bw_test = "H3AC_veA_wt_spore", bw_control = "H3_an_spore",genelist_1 = genelist_1,genelist_2 = genelist_2, ymax = 3.8,ymin=0.5, output_name = "H3Ac_veA_wt_spore")
 #'
 #' }
 profiles_normalized_by_control <- function(feature_txDb,bw_test,bw_control,genelist_1=NULL,genelist_2=NULL,ymax=6,ymin=1, output_name="Sample"){

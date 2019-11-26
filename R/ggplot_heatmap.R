@@ -32,7 +32,7 @@
 #' @examples
 #' \dontrun{
 #'
-#' dat <- readr::read_delim("data/an_spore_hypha_specificgenes.txt", delim="\t", col_names = TRUE)
+#' dat <- readr::read_delim(system.file("extdata/genesets/an_spore_hypha_specificgenes.txt" , package = "FungalSporeAnalysis"), delim="\t", col_names = TRUE)
 #' input_data <- dat %>% dplyr::filter(class=="spore_maturation")
 #' ggplot_heatmap(input_data ,threshold = TRUE, output_name = "plots/An_spores_maturation_genes_exprsn")
 #'

@@ -4,4 +4,4 @@
 ^_pkgdown\.yml$
 ^docs$
 ^pkgdown$
-^\inst\exdata\plots$
+^inst/exdata/plots/*$
