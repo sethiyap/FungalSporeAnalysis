@@ -3,6 +3,20 @@
 FungalSporeAnalysis
 ===================
 
-Fungal spore analysis is a repository and package consisting of functions used to analyze genomics data of fungal spores.
+<!-- <!-- badges: start -->
+<!-- [![platform](https://img.shields.io/badge/R-%3E%20v3.5.1-brightgreen)](https://shields.io/category/platform-support) -->
+<!-- <!-- badges: end -->
+Fungal spore analysis is a repository and package consisting of functions used to analyze genomics data of fungal spores. Following functions have been iteratively used in the analysis;
 
-For more details on see <https://sethiyap.github.io/FungalSporeAnalysis/>.
+-   `genelist_specific_profileplot`
+-   `profiles_normalized_by_control`
+-   `lineplot_from_bw`
+-   `ggplot_heatmap`
+-   `GO_diamond`
+-   `bw_corr`
+
+### Install
+
+    devtools::install_github("sethiyap/FungalSporeAnalysis")
+
+For more details on functions and analysis see <https://sethiyap.github.io/FungalSporeAnalysis/>.
