@@ -1,13 +1,13 @@
 ---
 output:
-     html_document:
+  html_document:
           theme: united
           highlight: tango
           toc: TRUE
           toc_float: TRUE
           toc_collapsed: FALSE
           smooth_scroll: TRUE
-          toc_depth: 4
+          toc_depth: 3
           number_sections: FALSE
 ---
 # Fungal spore data analysis
@@ -265,31 +265,39 @@ knitr::include_graphics(plots["af_3day_17day_spore_pol2_1309_hm.png"])
 
 ### Correlation between replicates
 
-1. RNAP II
-```{r,warning=FALSE, echo=TRUE, eval=FALSE}
+RNAP-II and RNASeq correlation was computed using normalised read count over the gene-body. Scatterplot of normalised read count and FPKM values were plotted using scatter plot functionality of [FungiExpresZ](https://cparsania.shinyapps.io/FungiExpresZ/)
 
+1. RNAP-II
 
-
+```{r,echo=FALSE, out.width = "700px",fig.align='center'}
+knitr::include_graphics(plots["An_RNAP2_expression_scatterplot.png"])
 ```
 
 2. RNASeq
 
+```{r,echo=FALSE, out.width = "400px",fig.align='center'}
+knitr::include_graphics(plots["An_mRNA_expression_scatterplot.png"])
+```
+
+For histone marks and TF's, normalised bw files are compared using `multiBigwigSummary` function from deeptools.
+```{r,warning=FALSE, echo=TRUE, eval=FALSE}
+multiBigwigSummary bins -bs 1000 -b an_spore_H3_AGAACACC_CL1019Mix_normalized.bw an_spore_H3_mix35_TCCAGCCTCT_normalized.bw -outRawCounts an_histone_spore_count_mat.tab --chromosomesToSkip mito_A_nidulans_FGSC_A4 -l an_spore_H3_set1 an_spore_H3_set2
+```
 3. Histone marks
 ```{r,warning=FALSE, echo=TRUE, eval=FALSE}
 dat <- read.delim("inst/extdata/correlation_data/an_histone_spore_count_mat.tab",sep="\t", header = TRUE)
 gp <- bw_corr(dat, pattern = ".*_spore_(.*)_(.*)")
 ```
-```{r,echo=FALSE, out.width = "700px",fig.align='center'}
+```{r,echo=FALSE, out.width = "700px",out.width = "300px",fig.align='center'}
 knitr::include_graphics(plots["An_spore_histone_bwscatterplot.png"])
 ```
-
 4. TF's
 ```{r,warning=FALSE, echo=TRUE, eval=FALSE}
 dat <- read.delim("inst/extdata/correlation_data/an_tbp_tf2b_spore_count_mat.tab",sep="\t", header = TRUE)
 gp <- bw_corr(dat, pattern = ".*_spore_(.*)_(.*)")
 ```
 
-```{r,echo=FALSE, out.width = "700px",fig.align='center'}
+```{r,echo=FALSE, out.width = "700px",out.width = "300px",fig.align='center'}
 knitr::include_graphics(plots["An_spore_TF_bwscatterplot.png"])
 ```
 
