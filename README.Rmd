@@ -42,5 +42,5 @@ devtools::install_github("sethiyap/FungalSporeAnalysis",repos=BiocManager::repos
 
 ```
 
-For more details on functions and analysis see <https://sethiyap.github.io/FungalSporeAnalysis/>.
+For more details on functions and analysis see <https://sethiyap.github.io/FungalSporeAnalysis/articles/pkgdown.html>.
 
