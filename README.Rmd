@@ -38,9 +38,7 @@ install.packages("devtools")
 
 install.packages("BiocManager")
 
-options(repos  = BiocManager::repositories())
-
-devtools::install_github("sethiyap/FungalSporeAnalysis")
+devtools::install_github("sethiyap/FungalSporeAnalysis",repos=BiocManager::repositories(),dependencies=TRUE,build = FALSE)
 
 ```
 
