@@ -5,3 +5,4 @@
 ^docs$
 ^pkgdown$
 ^inst/exdata/plots/*$
+^R/closest_gene_calling_v7.pl$

@@ -34,9 +34,11 @@ Fungal spore analysis is a repository and package consisting of functions used t
 ### Install
 
 ```
-options(repos  = BiocManager::repositories())
-
 install.packages("devtools")
+
+install.packages("BiocManager")
+
+options(repos  = BiocManager::repositories())
 
 devtools::install_github("sethiyap/FungalSporeAnalysis")
 

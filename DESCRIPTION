@@ -14,6 +14,7 @@ LazyData: true
 RoxygenNote: 6.1.1
 Imports:  
           magrittr(>= 1.5),
+          rlang(>= 0.4.2),
           png (>= 0.1-7),
           rtracklayer (>= 1.42.2),
           GenomicFeatures (>= 1.34.8),
