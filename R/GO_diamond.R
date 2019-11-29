@@ -19,6 +19,9 @@
 #'
 #' @return a diamond GO plot and image file of same.
 #' @export
+#' @importFrom dplyr mutate
+#' @import ggplot2
+#' @import magrittr
 #'
 #' @examples
 #' \dontrun{
@@ -65,19 +68,19 @@ GO_diamondplot <- function(data, palette=TRUE, output_name){
                     data_melt <- data_melt %>%
                               dplyr::mutate(class=factor(class, levels=unique(class)))
 
-                    gg= ggplot(data_melt , aes(y=term, x=class,ordered=TRUE))+xlab("")+ylab("")+
-                              geom_point(aes(size=percent_enrichment),color="black",shape=23, stroke=0.8)+
-                              geom_point(aes(size=percent_enrichment,alpha=-log10(pvalue), fill=category),shape=23)+
-                              scale_fill_manual(values=values)
+                    gg= ggplot2::ggplot(data_melt , ggplot2::aes(y=term, x=class,ordered=TRUE))+xlab("")+ylab("")+
+                              ggplot2::geom_point(ggplot2::aes(size=percent_enrichment),color="black",shape=23, stroke=0.8)+
+                              ggplot2::geom_point(ggplot2::aes(size=percent_enrichment,alpha=-log10(pvalue), fill=category),shape=23)+
+                              ggplot2::scale_fill_manual(values=values)
                               #scale_fill_manual(values=c("#e41a1c","#1b9e77","#f0027f"))
 
 
                     }
                     else{
-                              gg= ggplot(data_melt , aes(y=term, x=category,ordered=TRUE))+
-                                        geom_point(aes(size=percent_enrichment),color="black",shape=23, stroke=0.8)+
-                                        geom_point(aes(size=percent_enrichment,alpha=-log10(pvalue), fill=category),shape=23)+
-                                        scale_fill_manual(values=values)
+                              gg= ggplot2::ggplot(data_melt , ggplot2::aes(y=term, x=category,ordered=TRUE))+
+                                        ggplot2::geom_point(ggplot2::aes(size=percent_enrichment),color="black",shape=23, stroke=0.8)+
+                                        ggplot2::geom_point(ggplot2::aes(size=percent_enrichment,alpha=-log10(pvalue), fill=category),shape=23)+
+                                        ggplot2::scale_fill_manual(values=values)
 
                     }
 
@@ -106,7 +109,7 @@ GO_diamondplot <- function(data, palette=TRUE, output_name){
 
 
 
-                    ggsave(plot = gg_theme(gg),filename = paste(output_name,"GoByColorPvalue.png",sep=""), height = 7, width=7, device = "png", units = "in", dpi = 300, pointsize=10)
+                    ggplot2::ggsave(plot = gg_theme(gg),filename = paste(output_name,"GoByColorPvalue.png",sep=""), height = 7, width=7, device = "png", units = "in", dpi = 300, pointsize=10)
                     return(gg_theme(gg))
 }
 

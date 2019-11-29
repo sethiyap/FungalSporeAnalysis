@@ -10,8 +10,11 @@ Authors@R:
 Description: Functions used for analyzing fungal spore data. These functions help to visualize multiple profile plots, profiles plots specific to a gene list, line-plots, GO plots to understand transcription in fungal spores. 
 License: MIT
 Encoding: UTF-8
+URL: https://github.com/sethiyap/FungalSporeAnalysis
 LazyData: true
 RoxygenNote: 6.1.1
+Depends: 
+          R (>= 3.5.1)
 Imports:  
           magrittr(>= 1.5),
           rlang(>= 0.4.2),
@@ -21,13 +24,14 @@ Imports:
           broom (>= 0.5.2),
           dplyr (>= 0.8.3),
           purrr (>= 0.3.2),
-          EnrichedHeatmap(== 1.13.2),
-          ComplexHeatmap (== 1.99.5),
+          EnrichedHeatmap(>= 1.12.0),
+          ComplexHeatmap (>= 1.20.0),
           grid (>= 3.5.1),
           knitr (>= 1.25),
           tidyr (>= 1.0.0),
           ggplot2 (>= 3.2.1),
           stringr (>= 1.4.0),
           usethis (>= 1.5.0)
+VignetteBuilder: knitr
           
 

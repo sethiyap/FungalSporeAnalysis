@@ -17,11 +17,27 @@
 #' @param genelist_2 A tibble with either one or two columns to be considered as
 #'   control genes.  \code{1. gene_id and/or 2.Expression value} without header,
 #'   to subset genes from the feature file. \code{default:NULL}
-#' @param ymax Numeric, y-axis max limit for lineplot \code{default:6}
-#' @param ymin Numeric, y-axis minimum limit for lineplot \code{default:1}
 #' @param output_name A character vector containing name of the output
 #'   plot.\code{default:Sample}
+#' @param top_line Logical, whether to plot profile with average signal as line
+#'   plot at the top of plot. \code{default: TRUE}
+#' @param ymax Numeric, y-axis max limit for lineplot \code{default:6}
+#' @param ymin Numeric, y-axis minimum limit for lineplot \code{default:1}
 #'
+#' @import magrittr
+#' @import png
+#' @importFrom rtracklayer import
+#' @importFrom GenomicFeatures promoters
+#' @importFrom broom tidy
+#' @importFrom dplyr mutate
+#' @importFrom purrr map
+#' @import EnrichedHeatmap
+#' @import ComplexHeatmap
+#' @importFrom  grid unit
+#' @importFrom grid gpar
+#' @importFrom stringr str_detect
+#' @importFrom tidyr tibble
+#' @importFrom purrr map2
 #'
 #' @return An image of two heatmaps normalized to control bw. \itemize{
 #'   \item\code{Heatmap_list1:} profile of genelist_1 ordered by expression
@@ -53,7 +69,7 @@
 #'  profiles_normalized_by_control(feature_txDb = feature_txDb,bw_test = "H3AC_veA_wt_spore", bw_control = "H3_an_spore",genelist_1 = genelist_1,genelist_2 = genelist_2, ymax = 3.8,ymin=0.5, output_name = "H3Ac_veA_wt_spore")
 #'
 #' }
-profiles_normalized_by_control <- function(feature_txDb,bw_test,bw_control,genelist_1=NULL,genelist_2=NULL,ymax=6,ymin=1, output_name="Sample"){
+profiles_normalized_by_control <- function(feature_txDb,bw_test,bw_control,genelist_1=NULL,genelist_2=NULL,ymax=6,ymin=1, output_name="Sample", top_line=TRUE){
 
           feature_gr <- GenomicFeatures::genes(feature_txDb)
 
@@ -129,6 +145,19 @@ profiles_normalized_by_control <- function(feature_txDb,bw_test,bw_control,genel
 
           print(dd2)
 
+          if(top_line==TRUE){
+                    top_annotation = ComplexHeatmap::HeatmapAnnotation(
+                              lines = EnrichedHeatmap::anno_enriched(gp = grid::gpar(fontsize=12),
+                                                                     ylim=c(ymin, ymax),
+                                                                     yaxis_side = "right",
+                                                                     yaxis_facing = "outside",
+                                                                     yaxis_gp = grid::gpar(fontsize = 10, lwd=1.5)))
+          }
+          else{
+                    top_annotation = NULL
+          }
+
+
           get_enrichment_heatmap_list <- function(x, names, titles, ...) {
 
                     ll <- length(x)
@@ -165,14 +194,11 @@ profiles_normalized_by_control <- function(feature_txDb,bw_test,bw_control,genel
                                                   row_order=NULL,
                                                   show_row_names = FALSE,
                                                   axis_name_rot = 90,
-                                                  heatmap_legend_param = list(color_bar = "continuous",legend_direction="horizontal", legend_width = unit(3, "cm"),
-                                                                              title_position = "topcenter",labels_gp = gpar(fonsize=10)),
+                                                  heatmap_legend_param = list(color_bar = "continuous",legend_direction="horizontal", legend_width = grid::unit(3, "cm"),
+                                                                              title_position = "topcenter",labels_gp = grid::gpar(fontsize=10)),
                                                   axis_name = c("-1kb","TSS","TES", "+1kb"),
-                                                  axis_name_gp = gpar(fonsize=12),
-                                                  top_annotation = HeatmapAnnotation(lines = EnrichedHeatmap::anno_enriched(axis_param =list(facing="outside",side="left",gp=grid::gpar(fonsize=12)),
-                                                                                                                            ylim = c(ymin,ymax),
-                                                                                                                            height = grid::unit(2, "cm"))
-                                                                                     )
+                                                  axis_name_gp = grid::gpar(fontsize=12),
+                                                  top_annotation = top_annotation
                                                   )
 
           # row_order_list = row_order(ehm_list)

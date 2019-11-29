@@ -10,16 +10,17 @@
 #' @return .rda for each bw/ bdg file input
 #' @export
 #' @import usethis
+#' @import purrr
 #' @examples
 #' \dontrun{
-#' 
+#'
 #' save_bw_rda(bw_files_dir=".", pattern="default")
-#' 
+#'
 #' }
 save_bw_rda <- function(bw_files_dir, pattern=NULL){
-          
+
           bw_files <- list.files(bw_files_dir, pattern = paste(c("*.bw", "*.bedgraph"),collapse = '|'), recursive = T, full.names = T)
-          
+
           if(is.null(pattern)==FALSE){
                     names(bw_files) <- gsub(pattern = pattern,replacement = "", basename(bw_files))
           }
@@ -27,27 +28,27 @@ save_bw_rda <- function(bw_files_dir, pattern=NULL){
                     names(bw_files) <- gsub(pattern = paste(c("_[[:upper:]]{6,}_.*_normalized.bw*", "_gencov_normalized.bedgraph*"),collapse = '|'),replacement = "", basename(bw_files))
           }
           else{
-                    names(bw_files) <- basename(bw_files) 
+                    names(bw_files) <- basename(bw_files)
           }
-          
+
           bw_files <- broom::tidy(bw_files)
           print(bw_files)
-          
+
           xx <- bw_files %>%
                     dplyr::mutate(bw = purrr::map(x, function(ii) {
                               rtracklayer::import(ii)
                     }))
-          
-          
+
+
           mylist <- xx$bw
-          
+
           names(mylist) <- xx$names
-          
+
           purrr::walk2(mylist, names(mylist), function(obj, name) {
                     assign(name, obj)
                     do.call("use_data", list(as.name(name), overwrite=TRUE, compress = "bzip2"))
           })
-          
+
 }
 
 

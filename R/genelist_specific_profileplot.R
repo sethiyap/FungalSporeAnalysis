@@ -41,6 +41,7 @@
 #' @import EnrichedHeatmap
 #' @import ComplexHeatmap
 #' @importFrom  grid unit
+#' @importFrom grid gpar
 #'
 #' @return Parallel plots of profiles(log2) for given gene lists, ordered by
 #'   given expression value (high to low).
@@ -139,13 +140,13 @@ genelist_specific_profileplot <- function(feature_txDb,bw_files,genelist=NULL,ts
 
           # for color palette
           if(palette=="white_green"){
-                    colors <- c("#f7fcfd","#e5f5f9","#ccece6","#99d8c9", "#41ae76","#00441b")
+                    colors <- c("#f7fcfd","#e5f5f9","#ccece6","#99d8c9", "#41ae76","#00441b", "#004529")
           }
           if(palette=="white_red"){
-                    colors <-  c("#f7fcfd","#fff7f3","#fee0d2","#ef6548","#d7301f","#b30000")
+                    colors <-  c("#f7fcfd","#fff7f3","#fff7ec","#fee0d2","#ef6548","#d7301f","#b30000", "#7f0000")
           }
           if(palette=="white_blue"){
-                    colors = c("#eff3ff","#c6dbef","#9ecae1","#6baed6","#2171b5","#08306b")
+                    colors = c("#eff3ff","#c6dbef","#9ecae1","#6baed6","#2171b5","#08306b","#253494", "#081d58")
           }
           if(palette=="cream_pink"){
                     colors <-  c("#feebe2","#fcc5c0","#fa9fb5","#f768a1", "#c51b8a","#7a0177", "#49006a")
@@ -161,11 +162,14 @@ genelist_specific_profileplot <- function(feature_txDb,bw_files,genelist=NULL,ts
 
           split_factor <- round((max_key/6),1)
           breaks = seq(min_key,max_key, by = split_factor)
+
           if(top_line==TRUE){
-                    top_annotation = ComplexHeatmap::HeatmapAnnotation(lines = EnrichedHeatmap::anno_enriched(axis_param =list(facing="outside",side="left",gp=grid::gpar(fonsize=12)),
-                                                                                             ylim = c(ymin,ymax),
-                                                                                             height = grid::unit(1.2, "cm")
-                    ))
+                    top_annotation = ComplexHeatmap::HeatmapAnnotation(
+                              lines = EnrichedHeatmap::anno_enriched(gp = grid::gpar(fontsize=12),
+                                                                     ylim=c(ymin, ymax),
+                                                                     yaxis_side = "right",
+                                                                     yaxis_facing = "inside",
+                                                                     yaxis_gp = grid::gpar(fontsize = 10, lwd=1.5)))
           }
           else{
                     top_annotation = NULL

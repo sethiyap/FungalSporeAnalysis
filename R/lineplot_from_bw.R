@@ -24,6 +24,7 @@
 #' @return A line-plot of percentiles and a tibble of percentiles appended to
 #'   expression data.
 #' @export
+#' @import magrittr
 #' @import ggplot2
 #' @importFrom dplyr distinct
 #' @importFrom dplyr arrange

@@ -24,10 +24,12 @@
 #'   image file of same.
 #' @export
 #' @import ggplot2
+#' @import magrittr
 #' @importFrom tidyr gather
 #' @importFrom dplyr mutate
 #' @importFrom dplyr arrange
 #' @importFrom dplyr if_else
+#' @importFrom dplyr group_by
 #'
 #' @examples
 #' \dontrun{
@@ -78,11 +80,11 @@ ggplot_heatmap <- function(input_data , threshold=FALSE, output_name="Sample"){
                     gg_themed <- gg+ ggplot2::theme_bw()+
                                                   ggplot2::scale_y_discrete(position="right")+
                                                   ggplot2::scale_x_discrete(position="top")+
-                                                  theme(axis.text.x= ggplot2::element_text(color="black",size=12,angle=0,vjust=0.8),
+                                                  ggplot2::theme(axis.text.x= ggplot2::element_text(color="black",size=12,angle=0,vjust=0.8),
                                                         axis.text.y = ggplot2::element_text(color="black",size=12),
                                                         axis.title=ggplot2::element_blank(),
                                                         legend.position = "bottom",
-                                                        legend.title=element_text(color="black",size=10),
+                                                        legend.title=ggplot2::element_text(color="black",size=10),
                                                         legend.key.size = ggplot2::unit(1,"line"),
                                                         legend.box.spacing=ggplot2::unit(0.5,"mm"),
                                                         legend.text=ggplot2::element_text(color="black",size=8))+
