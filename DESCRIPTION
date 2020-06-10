@@ -1,6 +1,6 @@
 Package: FungalSporeAnalysis
 Title: Genomics data analysis of fungal spores.
-Version: 0.0.0.9000
+Version: 0.0.0.9
 Authors@R: 
     person(given = "Pooja",
            family = "Sethiya",
@@ -33,5 +33,6 @@ Imports:
           stringr (>= 1.4.0),
           usethis (>= 1.5.0)
 VignetteBuilder: knitr
-          
+BugReports: https://github.com/sethiyap/FungalSporeAnalysis/issues
+URL: https://github.com/sethiyap/FungalSporeAnalysis    
 
