@@ -34,5 +34,4 @@ Imports:
           usethis (>= 1.5.0)
 VignetteBuilder: knitr
 BugReports: https://github.com/sethiyap/FungalSporeAnalysis/issues
-URL: https://github.com/sethiyap/FungalSporeAnalysis    
 

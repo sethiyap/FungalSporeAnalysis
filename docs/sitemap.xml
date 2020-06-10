@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://sethiyap.github.io/FungalSporeAnalysis/index.html</loc>
+  </url>
+  <url>
+    <loc>https://sethiyap.github.io/FungalSporeAnalysis/reference/GO_diamondplot.html</loc>
+  </url>
+  <url>
+    <loc>https://sethiyap.github.io/FungalSporeAnalysis/reference/bw_corr.html</loc>
+  </url>
+  <url>
+    <loc>https://sethiyap.github.io/FungalSporeAnalysis/reference/genelist_specific_profileplot.html</loc>
+  </url>
+  <url>
+    <loc>https://sethiyap.github.io/FungalSporeAnalysis/reference/ggplot_heatmap.html</loc>
+  </url>
+  <url>
+    <loc>https://sethiyap.github.io/FungalSporeAnalysis/reference/lineplot_for_bw.html</loc>
+  </url>
+  <url>
+    <loc>https://sethiyap.github.io/FungalSporeAnalysis/reference/profiles_normalized_by_control.html</loc>
+  </url>
+  <url>
+    <loc>https://sethiyap.github.io/FungalSporeAnalysis/reference/save_bw_rda.html</loc>
+  </url>
+  <url>
+    <loc>https://sethiyap.github.io/FungalSporeAnalysis/articles/data_access.html</loc>
+  </url>
+  <url>
+    <loc>https://sethiyap.github.io/FungalSporeAnalysis/articles/pkgdown.html</loc>
+  </url>
+</urlset>
