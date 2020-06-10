@@ -346,7 +346,7 @@ knitr::include_graphics("An_RNAP2_expression_scatterplot.png")
 knitr::include_graphics("An_mRNA_expression_scatterplot.png")
 ```
 
-For histone marks and TF's, normalised bw files are compared using `multiBigwigSummary` function from deeptools.
+For histone marks normalised bw files were compared using `multiBigwigSummary` function from deeptools. 
 ```{r,warning=FALSE, echo=TRUE, eval=FALSE}
 multiBigwigSummary bins -bs 1000 -b an_spore_H3_AGAACACC_CL1019Mix_normalized.bw an_spore_H3_mix35_TCCAGCCTCT_normalized.bw --outRawCounts an_histone_spore_count_mat.tab -out an_histone_spore.npz --chromosomesToSkip mito_A_nidulans_FGSC_A4 -l an_spore_H3_set1 an_spore_H3_set2
 ```
@@ -358,6 +358,8 @@ gp <- bw_corr(dat, pattern = ".*_spore_(.*)_(.*)")
 ```{r,echo=FALSE, out.width = "700px",out.width = "300px",fig.align='center'}
 knitr::include_graphics("An_spore_histone_bwscatterplot.png")
 ```
+
+For RNAP I  18S, 28S, 5.8S rDNA locus and for RNAP III tRNAs, 5S rDNA locus were considered to obtain correlation.
 4. TF's
 ```{r,warning=FALSE, echo=TRUE, eval=FALSE}
 dat <- read.delim("inst/extdata/correlation_data/an_tbp_tf2b_spore_count_mat.tab",sep="\t", header = TRUE)
