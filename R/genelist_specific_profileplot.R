@@ -158,8 +158,6 @@ genelist_specific_profileplot <- function(feature_txDb,bw_files,genelist=NULL,ts
                     colors <-  c("#ffeda0","#fed976","#feb24c","#fd8d3c","#fc4e2a","#e31a1c","#bd0026","#800026")
           }
 
-
-
           split_factor <- round((max_key/6),1)
           breaks = seq(min_key,max_key, by = split_factor)
 
@@ -167,9 +165,12 @@ genelist_specific_profileplot <- function(feature_txDb,bw_files,genelist=NULL,ts
                     top_annotation = ComplexHeatmap::HeatmapAnnotation(
                               lines = EnrichedHeatmap::anno_enriched(gp = grid::gpar(fontsize=12),
                                                                      ylim=c(ymin, ymax),
-                                                                     yaxis_side = "right",
-                                                                     yaxis_facing = "inside",
-                                                                     yaxis_gp = grid::gpar(fontsize = 10, lwd=1.5)))
+                                                                     # yaxis_side = "right",
+                                                                     # yaxis_facing = "inside",
+                                                                    # yaxis_gp = grid::gpar(fontsize = 10, lwd=1.5)),
+                                                                      axis_param = list(gp=grid::gpar(fontsize = 10, lwd=1.5),
+                                                                                        side="right",
+                                                                                        facing="inside")))
           }
           else{
                     top_annotation = NULL

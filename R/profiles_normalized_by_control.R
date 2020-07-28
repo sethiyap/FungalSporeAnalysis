@@ -149,9 +149,12 @@ profiles_normalized_by_control <- function(feature_txDb,bw_test,bw_control,genel
                     top_annotation = ComplexHeatmap::HeatmapAnnotation(
                               lines = EnrichedHeatmap::anno_enriched(gp = grid::gpar(fontsize=12),
                                                                      ylim=c(ymin, ymax),
-                                                                     yaxis_side = "right",
-                                                                     yaxis_facing = "outside",
-                                                                     yaxis_gp = grid::gpar(fontsize = 10, lwd=1.5)))
+                                                                     # yaxis_side = "right",
+                                                                     # yaxis_facing = "outside",
+                                                                     # yaxis_gp = grid::gpar(fontsize = 10, lwd=1.5)
+                                                                     axis_param = list(gp=grid::gpar(fontsize = 10, lwd=1.5),
+                                                                                       side="right",
+                                                                                       facing="outside")))
           }
           else{
                     top_annotation = NULL
